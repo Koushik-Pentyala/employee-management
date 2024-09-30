@@ -59,7 +59,7 @@ CREATE TABLE Employee (
 );
 
 
- 3. Configure the Database Connection
+### 3. Configure the Database Connection
 #### In the DBConnection.java file located in src/main/java/employee/utils/DBConnection.java, update the following constants with your MySQL credentials:
 
 
