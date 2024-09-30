@@ -26,3 +26,52 @@ Before running this project, make sure you have the following installed on your 
 ```bash
 git clone https://github.com/your-username/employee-management-system.git
 cd employee-management-system
+
+```
+### Database setup
+
+#### Install and configure MySQL.
+#### Create a new database named EmployeeDB and run the following SQL script to create the required tables:
+
+CREATE DATABASE EmployeeDB;
+
+USE EmployeeDB;
+
+CREATE TABLE Department (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE Role (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE Employee (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    salary DOUBLE NOT NULL,
+    department_id INT,
+    role_id INT,
+    FOREIGN KEY (department_id) REFERENCES Department(id),
+    FOREIGN KEY (role_id) REFERENCES Role(id)
+);
+
+
+ 3. Configure the Database Connection
+#### In the DBConnection.java file located in src/main/java/employee/utils/DBConnection.java, update the following constants with your MySQL credentials:
+
+
+### 4. Build the Project
+#### Navigate to the project directory and build the project using Maven:
+
+```
+mvn clean install
+```
+This will download all the dependencies, compile the project, and package it into a JAR file.
+
+
+### 5. Run the Project
+#### You can run the project directly from your IDE (Eclipse or IntelliJ IDEA) by running the main() method in EmployeeManagementSystem.java.
+
