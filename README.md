@@ -33,7 +33,7 @@ cd employee-management-system
 #### Install and configure MySQL.
 #### Create a new database named EmployeeDB and run the following SQL script to create the required tables:
 
-CREATE DATABASE EmployeeDB;
+### CREATE DATABASE EmployeeDB;
 
 USE EmployeeDB;
 
